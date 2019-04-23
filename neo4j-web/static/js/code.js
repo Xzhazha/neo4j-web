@@ -6,17 +6,17 @@ $(function(){
 	   { selector: 'edge', css: {'curve-style': 'bezier','target-arrow-shape': 'triangle', 'content': 'data(relationship)'}} 
     ];*/
 
+	//将cytoscape样式定义为变量cy
     var cy =window.cy = cytoscape({
-      container: document.getElementById('cy'),
-	  
+      container: document.getElementById('cy'),	  // 定义需要渲染的容器
       /*style: style,*/
 	  style:cytoscape.stylesheet()
-      .selector('node[label = "Person"]').css({'background-color': '#6FB1FC','content': 'data(name)'})
+      .selector('node[label = "Person"]').css({'background-color': '#6FB1FC','content': 'data(name)'}) //节点样式
       .selector('node[label = "Movie"]').css({'background-color': '#F5A45D','content': 'data(title)'})
-	  .selector('edge').css({'curve-style': 'bezier','target-arrow-shape': 'triangle','line-color': '#ffaaaa','target-arrow-color': '#ffaaaa','content': 'data(relationship)'})
-      .selector(':selected').css({'background-color': 'black','line-color': 'black','target-arrow-color': 'black','source-arrow-color': 'black','opacity': 1})
+	  .selector('edge').css({'curve-style': 'bezier','target-arrow-shape': 'triangle','line-color': '#ffaaaa','target-arrow-color': '#ffaaaa','content': 'data(relationship)'}) //边线样式
+      .selector(':selected').css({'background-color': 'black','line-color': 'black','target-arrow-color': 'black','source-arrow-color': 'black','opacity': 1}) //点击后节点与边的样式
       .selector('.faded').css({'opacity': 0.25,'text-opacity': 0}),
-      layout: { name: 'cose', fit: true },      
+      layout: { name: 'cose', fit: true },  //画布自适应大小
       elements: result.elements
 	});
 		

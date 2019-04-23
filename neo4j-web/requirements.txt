@@ -1,2 +1,2 @@
-Flask
-pyneo4j
+flask
+neo4j-driver
